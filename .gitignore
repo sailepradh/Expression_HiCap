@@ -1,0 +1,8 @@
+# Ignore these directories:
+results/
+intermediate/
+data/
+
+#Ignore these files
+*.tmp
+*.csv
