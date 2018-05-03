@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+### BEGIN SOLUTION
+
+for d in data data/raw_external data/raw_internal data/meta code notebooks intermediate scratch logs Snakefile Dockerfile
+do
+    mkdir -p $1/$d
+    touch $1/$d/README
+done
+
+for f in doc results results/figs results/tables results/reports
+do
+    mkdir -p $1/$f
+done
+
+touch $1/config.yml $1/environment.yml
+
+### END SOLUTION
