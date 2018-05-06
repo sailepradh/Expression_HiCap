@@ -8,6 +8,9 @@ import argparse
 
 """
     This is a general functions developed for manipulating interaction data and expression data
+
+     python hicap_exps.py /Volumes/Work_drive/prj/Expression_Vs_Interaction/data/THP1/gene_expression_THP1_nlps_filtered.txt /Volumes/Work_drive/prj/Expression_Vs_Interaction/data/THP1/THP1run.hg19.nLPS.Proximities.Probe_Distal.filtered.txt /Volumes/Work_drive/prj/Expression_Vs_Interaction/data/THP1/THP1run.hg19.nLPS.Proximities.Probe_Probe.SMCscaled.filtered.txt
+
 """
 
 def exp_dict(exp_data):
