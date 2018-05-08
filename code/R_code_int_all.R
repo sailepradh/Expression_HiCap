@@ -78,13 +78,13 @@ write.table(unique(Comm_Unexpressed_genes),"Common_UnExpr_probe_gene.txt",sep="\
 ######################################################################################################################################################
 
 tmp <- Genes_target_THP1[which(Genes_target_THP1$V1 %in% Common_exprss_and_probe),]
-SP_FPKM_THP1 <- tmp[order(tmp[,1]),][,c(1,2,3)]
+SP_FPKM_THP1 <- tmp[order(tmp[,1]),][,c(1,3,4)]
 
 tmp<- Genes_target_TAV[which(Genes_target_TAV$V1 %in% Common_exprss_and_probe),]
-SP_FPKM_TAV <- tmp[order(tmp[,1]),][,c(1,2,3)]
+SP_FPKM_TAV <- tmp[order(tmp[,1]),][,c(1,3,4)]
 
 tmp <- Genes_target_SMC[which(Genes_target_SMC$V1 %in% Common_exprss_and_probe),]
-SP_FPKM_SMC <- tmp[order(tmp[,1]),][,c(1,2,3)]
+SP_FPKM_SMC <- tmp[order(tmp[,1]),][,c(1,3,4)]
 
 head (SP_FPKM_SMC)
 tail (SP_FPKM_SMC)
@@ -126,17 +126,17 @@ plot(ir.pca$x[,1:2],xlab = "PC1", ylab = "PC2", col =as.factor(cal), pch =19)
 biplot(ir.pca)
 
 
-fviz_pca_biplot(ir.pca,
-                col.var = "#2E9FDF", # Variables color
-                col.ind = "#696969", # Individuals color
-                repel = TRUE     # Avoid text overlapping
-)
+#fviz_pca_biplot(ir.pca,
+#                col.var = "#2E9FDF", # Variables color
+#                col.ind = "#696969", # Individuals color
+#                repel = TRUE     # Avoid text overlapping
+#)
 
 lab= c("mTHP1","mTHP1","HAEC","HAEC","HSMC","HSMC")
 
 p = fviz_pca_ind(ir.pca, pointsize = 5, habillage=lab, addEllipses=TRUE, ellipse.level=0.95)+
   labs(title ="PCA")+
-  xlim(-25, 25) + ylim (-15, 15)
+  xlim(-100,100) + ylim (-100, 100)
 
 p+ scale_color_brewer(palette="Dark2") +
   theme(legend.text=element_text(size=20),
@@ -148,4 +148,4 @@ p+ scale_color_brewer(palette="Dark2") +
         axis.text.y = element_text(size=20),
         plot.title = element_text(colour="grey20",size=30,hjust=0.5),
         plot.margin = unit(c(2, 2, 2, 2), "cm"))+
-  ggtitle("\nPCA plot of significant interaction in all three cell types and replicates \n")
+  ggtitle("\nPCA plot of interaction profiles of expressed genes \n in all three cell types and replicates \n")

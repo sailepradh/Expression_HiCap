@@ -64,6 +64,7 @@ def SP_CPM(results_interaction):
             tot_len_Enh = int(values[2])+ tot_len_Enh
 
         tot_len_Enh = tot_len_Enh/1000
+#        tot_len_Enh = tot_len_Enh/1000000
         Enh_rep1 = round(Enh_rep1/(counts_rep1/1000000),3)
         Enh_rep2 = round(Enh_rep2/(counts_rep2/1000000),3)
         #Enh_rep1 = round(Enh_rep1/((counts_rep1/1000000)*tot_len_Enh),3)
